@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Sonic Canvas // Web Audio Visualizer</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <!-- Launch Menu -->
+  <div id="ui-overlay">
+    <h1>SONIC CANVAS</h1>
+    <p class="subtitle">REAL-TIME FFT AUDIO VISUALIZER</p>
+    <div class="btn-group">
+      <button id="start-btn">INITIALIZE MIC</button>
+      <button id="file-btn">LOAD MP3 / AUDIO</button>
+      <button id="synth-btn">SYNTH DEMO BEAT</button>
+    </div>
+    <input type="file" id="audio-file" accept="audio/*" hidden>
+  </div>
+
+  <!-- Live Telemetry HUD (Appears when active) -->
+  <div id="hud" class="hidden">
+    <div class="hud-stats">
+      <span>BASS: <strong id="bass-val">000</strong></span>
+      <span>MID: <strong id="mid-val">000</strong></span>
+      <span>HIGH: <strong id="high-val">000</strong></span>
+    </div>
+    <div class="hud-controls">
+      <button id="mode-btn">MODE: RADIAL</button>
+      <button id="theme-btn">THEME: CYBER</button>
+      <button id="fullscreen-btn">FULLSCREEN</button>
+      <button id="stop-btn">STOP / MENU</button>
+    </div>
+  </div>
+
+  <canvas id="visualizer"></canvas>
+
+  <script src="app.js"></script>
+</body>
+</html>
